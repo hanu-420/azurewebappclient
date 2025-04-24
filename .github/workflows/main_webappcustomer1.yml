@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: monsoonwebappreg.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_206BA2C2D0054251BE245DC3A06061B7 }}/monsoonwebapp_client:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./Client/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
