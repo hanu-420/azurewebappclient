@@ -5,7 +5,7 @@ FROM node:22.14.0 as builder
 WORKDIR /client
 
 # Copy files and install deps
-COPY package*.json ./
+COPY client/package*.json ./
 RUN npm install
 
 # Copy the rest and build
@@ -17,7 +17,7 @@ RUN npm run build
 #CMD ["serve", "-s", "build", "-l", "3000"]
 
 # Expose the port
-EXPOSE 3000
+#EXPOSE 3000
 ## Run the app
 #CMD ["npm", "start"]
 
