@@ -33,13 +33,17 @@ function App() {
 
     const [message, setMessage] = useState('');
 
+    const hostname = window.location.hostname; // Gets just the hostname
+    const beforeHyphen = hostname.split('-')[0];
+    const api = beforeHyphen === "webappcustomer1" ? "http://webappcustomer1server-d8d8gzejd8fva0an.centralus-01.azurewebsites.net/" : "http://webappcustomer2server-eub6daaja8hyhcce.centralus-01.azurewebsites.net/"
+
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/api`) // This works with proxy setup or NGINX in production
+        fetch(`${window.location.hostname}/api`) // This works with proxy setup or NGINX in production
             .then(res => res.json())
             .then(data => setMessage(data.message));
     }, []);
 
-    return <h1>{message || 'Loading...'}</h1>;
+    return <h1>{message || 'Loading...'}.</h1>;
 }
 
 export default App
