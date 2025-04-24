@@ -29,6 +29,7 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
+        context: ./client
         push: true
         tags: monsoonwebappreg.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_206BA2C2D0054251BE245DC3A06061B7 }}/monsoonwebapp_client:${{ github.sha }}
         file: ./client/Dockerfile

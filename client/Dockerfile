@@ -2,14 +2,14 @@
 FROM node:22.14.0 as builder
 
 # Set working directory
-WORKDIR /client
+WORKDIR /app
 
 # Copy files and install deps
-COPY client/package*.json ./
+COPY package*.json ./
 RUN npm install
 
 # Copy the rest and build
-COPY client/ /client/
+COPY . .
 RUN npm run build
 
 ## Serve using a simple static server
