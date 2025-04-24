@@ -35,10 +35,10 @@ function App() {
 
     const hostname = window.location.hostname; // Gets just the hostname
     const beforeHyphen = hostname.split('-')[0];
-    const api = beforeHyphen === "webappcustomer1" ? "http://webappcustomer1server-d8d8gzejd8fva0an.centralus-01.azurewebsites.net/" : "http://webappcustomer2server-eub6daaja8hyhcce.centralus-01.azurewebsites.net/"
+    const api = beforeHyphen === "webappcustomer1" ? "http://webappcustomer1server-d8d8gzejd8fva0an.centralus-01.azurewebsites.net/api" : "http://webappcustomer2server-eub6daaja8hyhcce.centralus-01.azurewebsites.net/api"
 
     useEffect(() => {
-        fetch(`${window.location.hostname}/api`) // This works with proxy setup or NGINX in production
+        fetch(`${api}/`) // This works with proxy setup or NGINX in production
             .then(res => res.json())
             .then(data => setMessage(data.message));
     }, []);
