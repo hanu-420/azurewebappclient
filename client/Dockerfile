@@ -9,7 +9,7 @@ COPY client/package*.json ./
 RUN npm install
 
 # Copy the rest and build
-COPY . .
+COPY client/ /client/
 RUN npm run build
 
 ## Serve using a simple static server
