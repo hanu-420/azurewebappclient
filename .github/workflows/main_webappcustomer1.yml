@@ -50,3 +50,12 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CC9458A0931D4A5BA8D85F3F8EDD14DB }}
         images: 'monsoonwebappreg.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_206BA2C2D0054251BE245DC3A06061B7 }}/monsoonwebapp_client:${{ github.sha }}'
+
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'webappcustomer2'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_10C0467360AC4A2DAF1331E5E2BE5992 }}
+        images: 'monsoonwebappreg.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_206BA2C2D0054251BE245DC3A06061B7 }}/monsoonwebapp_client:${{ github.sha }}'
