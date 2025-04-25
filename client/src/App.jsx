@@ -44,7 +44,7 @@ function App() {
             .then(data => setMessage(data.message));
     }, []);
 
-    return <h1>{message || 'Loading...'} {api}</h1>;
+    return <h1>{message || 'Loading....'} {api}</h1>;
 }
 
 export default App
