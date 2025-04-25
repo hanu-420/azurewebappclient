@@ -52,7 +52,7 @@ jobs:
         images: 'monsoonwebappreg.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_206BA2C2D0054251BE245DC3A06061B7 }}/monsoonwebapp_client:${{ github.sha }}'
 
     - name: Deploy to Azure Web App
-      id: deploy-to-webapp
+      id: deploy-to-webapp2
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'webappcustomer2'
