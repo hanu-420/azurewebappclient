@@ -36,6 +36,7 @@ function App() {
     const hostname = window.location.hostname; // Gets just the hostname
     const beforeHyphen = hostname.split('-')[0];
     const api = beforeHyphen === "webappcustomer1" ? "https://webappcustomer1server-d8d8gzejd8fva0an.centralus-01.azurewebsites.net/api" : "https://webappcustomer2server-eub6daaja8hyhcce.centralus-01.azurewebsites.net/api"
+    //const api2 = "https://monsoonwebappcontainersever-gqfvhdbkh6ddasg2.centralus-01.azurewebsites.net/api"
 
     useEffect(() => {
         fetch(`${api}`) // This works with proxy setup or NGINX in production
